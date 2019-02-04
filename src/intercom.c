@@ -386,7 +386,7 @@ void intercom_send_audio(intercom_ctx *ctx, pcmChunk *chunk) {
 	memcpy(&packet[packet_len], chunk->data, chunk->size);
 	packet_len += chunk->size;
 
-	print_packet(packet, packet_len);
+	// print_packet(packet, packet_len);
 	for (int i = VECTOR_LEN(snapctx.clientmgr_ctx.clients) - 1; i >= 0; i--) {
 		struct client *c = &VECTOR_INDEX(snapctx.clientmgr_ctx.clients, i);
 		intercom_send_packet_unicast(&snapctx.intercom_ctx, &c->ip, packet, packet_len, c->port);
