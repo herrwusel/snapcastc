@@ -244,7 +244,6 @@ bool intercom_handle_audio(intercom_ctx *ctx, intercom_packet_audio *packet, int
 
 	realloc_intercom_buffer_when_required(ctx, ntohs(packet->bufferms));
 
-	printf("packetsize: %d\n", sizeof(intercom_packet_audio));
 	uint8_t *packetpointer = &((uint8_t *)packet)[sizeof(intercom_packet_audio)];
 
 	pcmChunk chunk;
